@@ -1,0 +1,34 @@
+version : 2.1
+orbs:
+  node : circleci/node@5.0.2
+  heroku : circleci/heroku@1.2.6
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run test
+          name : Run tests
+
+  deploy:
+    executor: heroku/default
+    steps:
+      - heroku/deploy-via-git:
+         force : true
+
+workflows:
+  test-myapp:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only : main
+
+         
+ 
