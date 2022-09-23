@@ -17,6 +17,8 @@ jobs:
     executor: heroku/default
     steps:
       - heroku/deploy-via-git:
+         app-name: HEROKU_APP_NAME
+         api-key: HEROKU_API_KEY
          force : true
 
 workflows:
