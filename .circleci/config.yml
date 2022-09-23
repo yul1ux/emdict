@@ -25,12 +25,7 @@ workflows:
   test-myapp:
     jobs:
       - test
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only : main
+      
 
          
  
