@@ -12,15 +12,6 @@ jobs:
       - run:
           command: npm run test
           name : Run tests
-
-  deploy:
-    executor: heroku/default
-    steps:
-      - heroku/deploy-via-git:
-         app-name: HEROKU_APP_NAME
-         api-key: HEROKU_API_KEY
-         force : true
-
 workflows:
   test-myapp:
     jobs:
