@@ -1,17 +1,12 @@
-const {MongoClient} = require('mongodb')
+const mongoose = require('mongoose')
 const config = require('../config');
-const logger = require('./logger');
 
-const connectin = async () => {
-    try {
-        const mongoClient = new MongoClient(config.DB)
-        await mongoClient.connect()
-
-        return mongoClient;
-    } catch (error) {
-        logger.error('Connection to mongodb failed!',error)
-        process.exit();
-    }
+const dbConnection =  async () => {
+    const connection = await mongoose.connect(config.DB,{useNewUrlParser :true,useUnifiedTopology:true})
+    
+    return connection.db;
+   
 }
 
-module.exports = connectin;
+
+module.exports = dbConnection;
