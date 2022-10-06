@@ -6,7 +6,7 @@ const httpStatusCodes ={
 } 
 class ApiError extends Error{
     constructor(description,statusCode,isOperational){
-        super(description);
+        super((description));
         Object.setPrototypeOf(this,new.target.prototype)
 
         this.statusCode = statusCode;
