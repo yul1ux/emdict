@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const { returnError } = require('./utils/errorHandler');
@@ -7,12 +7,11 @@ const logger = require('./utils/logger');
 const routes = require('./api/routes');
 const connection = require('./utils/mongodb');
 
-const server = async()=>{
-  const app = express();
+const app = express();
 
-  await connection();
+const server = async()=> {
+  await connection;
   logger.info('Database connected')
-  
   app.get('/status', (req, res) => {
     res.sendStatus(200);
   });
@@ -31,5 +30,6 @@ const server = async()=>{
   });
   
 }
+server()
 
-server();
+module.exports = app;
