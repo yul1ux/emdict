@@ -11,8 +11,8 @@ if (env.error) {
 module.exports = {
   PORT: process.env.PORT,
 
-  DB:process.env.MONGODB_URI,
-
+  DB:process.env.MONGODB_DURI,
+  REDIS : process.env.REDIS_DURI,
   api: {
     prefix: '/api',
   },
