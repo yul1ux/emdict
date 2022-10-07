@@ -10,7 +10,7 @@ const connection = require('./utils/mongodb');
 const app = express();
 
 const server = async()=> {
-  await connection;
+  await connection();
   logger.info('Database connected')
   app.get('/status', (req, res) => {
     res.sendStatus(200);
