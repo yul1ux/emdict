@@ -9,8 +9,7 @@ const connection = require('./utils/mongodb');
 
 const app = express();
 
-const server = async()=> {
-  await connection();
+  connection();
   logger.info('Database connected')
   app.get('/status', (req, res) => {
     res.sendStatus(200);
@@ -29,7 +28,6 @@ const server = async()=> {
     logger.info(`App is listening on port:${config.PORT}`);
   });
   
-}
-server()
+
 
 module.exports = app;

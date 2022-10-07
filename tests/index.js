@@ -15,7 +15,7 @@ describe('get definition',function(){
     it('return def and state', (done)=>{
         request(app)
           .get('/api/search?w=dog')
-          .expect(200,done)
+          .expect(200,done())
           
     })
 })
