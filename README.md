@@ -1,47 +1,48 @@
 # emdict
 
-This is English-Myanmar dictionary using ornagai database.Project structure inspired from ['Bulletproof node.js project architecture'](https://softwareontheroad.com/ideal-nodejs-project-structure?utm_source=github&utm_medium=readme)
+**emdict** is an English-to-Myanmar dictionary built using the Ornagai database. The project structure is inspired by the Bulletproof Node.js architecture.
 
-## Development
+## 🚀 Features
 
-`node` version `v18.7.0`
+- English-to-Myanmar word translation
+- REST API for word lookup
+- Follows scalable and maintainable Node.js architecture
 
-use nvm to install node 
+## 🛠️ Development Setup
 
-```
-nvm install 18.7.0
+### Prerequisites
 
-```
-```
-nvm use 18.7.0
+- Node.js version 18.7.0
+- nvm for Node version management
 
-```
-First you need to install dependicies
+### Installation
 
-```
-npm i
+1. Install Node.js v18.7.0 using nvm:
 
-```
-Change sample.env to .env 
+   nvm install 18.7.0  
+   nvm use 18.7.0
 
-```
-mv .env.sample .env
+2. Install dependencies:
 
-```
-And then you can start server with 
+   npm install
 
-```
-npm run start
-```
-or for development
+3. Set up environment variables:
 
-```
-npm run dev
-```
-## Api Documentation
+   mv .env.sample .env
 
-You can get definition of given word using
+4. Start the server:
 
-```
-http://<host>:<port>/search?w=<word>
-```
+   Production:
+   npm run start
+
+   Development:
+   npm run dev
+
+## 📖 API Documentation
+
+### Get Word Definition
+
+GET http://<host>:<port>/search?w=<word>
+
+Example:  
+GET http://localhost:3000/search?w=hello
