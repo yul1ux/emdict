@@ -62,16 +62,16 @@ emdict is a comprehensive English-to-Myanmar dictionary application built using 
  - w (required): The English word to look up
 
 ###### - Example Request:
-   ```bash
+       ```bash
 
-curl "http://localhost:3000/search?w=hello"
-Successful Response:
-json
+      curl "http://localhost:3000/search?w=hello"
+      Successful Response:
+      json
 
-{
-  "status": "success",
-  "data": {
-    "word": "hello",
+      {
+           "status": "success",
+            "data": {
+                "word": "hello",
     "definitions": [
       "မင်္ဂလာပါ",
       "ဟယ်လို"
@@ -79,7 +79,7 @@ json
   }
 }
 
-### Error Response:
+Error Response:
 json
 
 {
@@ -87,7 +87,7 @@ json
   "message": "Word not found"
 }
 
-📜 License
+-  ### 📜 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 🙏 Acknowledgments
