@@ -1,48 +1,97 @@
-# emdict
+# emdict - English to Myanmar Dictionary
 
-**emdict** is an English-to-Myanmar dictionary built using the Ornagai database. The project structure is inspired by the Bulletproof Node.js architecture.
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.7.0-brightgreen)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-## 🚀 Features
+emdict is a comprehensive English-to-Myanmar dictionary application built using the Ornagai database. Following modern Node.js best practices, the project implements a scalable and maintainable architecture inspired by the Bulletproof Node.js pattern.
 
-- English-to-Myanmar word translation
-- REST API for word lookup
-- Follows scalable and maintainable Node.js architecture
+## 🚀 Key Features
 
-## 🛠️ Development Setup
+- Accurate English-to-Myanmar word translations
+- RESTful API for word lookup
+- Clean, maintainable codebase
+- Scalable architecture following industry best practices
+- Environment-based configuration
+
+## 📦 Installation
 
 ### Prerequisites
 
-- Node.js version 18.7.0
-- nvm for Node version management
+- Node.js v18.7.0 or higher
+- npm (comes with Node.js)
+- nvm (recommended for Node version management)
 
-### Installation
+### Setup Instructions
 
-1. Install Node.js v18.7.0 using nvm:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/emdict.git
+   cd emdict
+2. **Install Node.js using nvm (recommended)**:
+   ```bash
 
-   nvm install 18.7.0  
+   nvm install 18.7.0
    nvm use 18.7.0
 
-2. Install dependencies:
-
+3. **Install dependencies**:
+   ```bash
    npm install
+4. **Configure environment variables**:
+   ```bash
+   cp .env.sample .env
+   Then edit the .env file with your configuration.
 
-3. Set up environment variables:
-
-   mv .env.sample .env
-
-4. Start the server:
-
-   Production:
-   npm run start
-
-   Development:
+### 🏃 Running the Application
+- **Development Mode**
+   ```bash 
    npm run dev
+ Starts the server with nodemon for automatic reloading.
+   
+- **Production Mode**
+   ```bash
+   npm run start
+- **Running Tests**
+   ```bash
+   npm test
+### 📚API Documentation
+**Get Word Definition**
+###### Endpoint:
+###### GET /search?w={word}
+ 
+###### Parameters:
+ - w (required): The English word to look up
 
-## 📖 API Documentation
+###### - Example Request:
+   ```bash
 
-### Get Word Definition
+curl "http://localhost:3000/search?w=hello"
+Successful Response:
+json
 
-GET http://<host>:<port>/search?w=<word>
+{
+  "status": "success",
+  "data": {
+    "word": "hello",
+    "definitions": [
+      "မင်္ဂလာပါ",
+      "ဟယ်လို"
+    ]
+  }
+}
 
-Example:  
-GET http://localhost:3000/search?w=hello
+### Error Response:
+json
+
+{
+  "status": "error",
+  "message": "Word not found"
+}
+
+📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+🙏 Acknowledgments
+
+    Ornagai database for the dictionary data
+
+    Bulletproof Node.js architecture inspiration
