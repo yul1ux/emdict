@@ -53,17 +53,20 @@ emdict is a comprehensive English-to-Myanmar dictionary application built using 
 - **Running Tests**
    ```bash
    npm test
-### 📚API Documentation
-**Get Word Definition**
-###### Endpoint:
-###### GET /search?w={word}
- 
-###### Parameters:
- - w (required): The English word to look up
+## 📚 API Documentation
 
-###### - Example Request:
-       ```bash
+### 📖 Definition Lookup
 
+**Endpoint:**  
+`GET /search?w={word}`
+
+**Query Parameters:**
+
+- `w` (required): The English word to look up
+
+**Example Request:**
+
+      
       curl "http://localhost:3000/search?w=hello"
       Successful Response:
       json
@@ -72,26 +75,28 @@ emdict is a comprehensive English-to-Myanmar dictionary application built using 
            "status": "success",
             "data": {
                 "word": "hello",
-    "definitions": [
-      "မင်္ဂလာပါ",
-      "ဟယ်လို"
-    ]
-  }
-}
+            "definitions": [
+                             "မင်္ဂလာပါ",
+                             "ဟယ်လို"
+                           ]
+                    }
+      }
 
-Error Response:
-json
+     Error Response:
+     json
 
-{
-  "status": "error",
-  "message": "Word not found"
-}
+     {
+        "status": "error",
+        "message": "Word not found"
+    }
 
--  ### 📜 License
+## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-🙏 Acknowledgments
+This project is licensed under the MIT License.
 
-    Ornagai database for the dictionary data
+---
 
-    Bulletproof Node.js architecture inspiration
+## 🙏 Acknowledgments
+
+- **Ornagai** – for the dictionary data  
+- **Bulletproof Node.js Architecture** – for design inspiration
